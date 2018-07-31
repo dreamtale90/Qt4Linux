@@ -1,0 +1,9 @@
+jklkj
+1.qt程序无法显示中文
+	设置字体"UTF-8"
+	使用qtconfig设置字体，"Song Ti"
+
+2.qt-creator无法使用中文输入法
+	apt-get install fcitx-libs-qt5
+	cp /usr/lib/x86_64-linux-gnu/qt5/plugins/platforminputcontexts/libfcitxplatforminputcontextplugin.so /opt/qtcreator-4.6.2/lib/Qt/plugins/platforminputcontexts/
+	chmod +x /opt/qtcreator-4.6.2/lib/Qt/plugins/platforminputcontexts/libfcitxplatforminputcontextplugin.so

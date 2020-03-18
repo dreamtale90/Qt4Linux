@@ -44,9 +44,9 @@ private:
 	double sumSoFar;
 	//乘法和除法运算值保存
 	double factorSoFar;
-	//加法和减法运算符合保存
+    //加法和减法运算符号保存
 	QString pendingAdditiveOperator;
-	//乘法和除法运算符合保存
+    //乘法和除法运算符号保存
 	QString pendingMultiplicativeOperator;
 	//表示状态
 	bool waitingForOperand;

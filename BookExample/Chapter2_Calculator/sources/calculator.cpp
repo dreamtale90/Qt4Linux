@@ -246,7 +246,7 @@ void Calculator::multiplicativeOperatorClicked()
 		factorSoFar = operand;
 	}
 
-	pendingAdditiveOperator = clickedOperator;
+    pendingMultiplicativeOperator = clickedOperator;
 	waitingForOperand = true;
 }
 

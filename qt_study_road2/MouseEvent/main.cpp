@@ -37,6 +37,7 @@ int main(int argc, char *argv[])
     EventLabel *label = new EventLabel;
     label->setWindowTitle("MouseEvent Demo");
     label->resize(300, 200);
+    label->setMouseTracking(true);
     label->show();
 
     return a.exec();

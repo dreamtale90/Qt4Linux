@@ -25,6 +25,11 @@ MainWindow::MainWindow(QWidget *parent) :
 
     textEdit = new QTextEdit(this);
     setCentralWidget(textEdit);
+    connect(textEdit, &QTextEdit::textChanged, [=]() {
+            this->setWindowModified(true);
+            });
+
+    setWindowTitle("TextPad [*]");
 }
 
 MainWindow::~MainWindow()
@@ -62,5 +67,23 @@ void MainWindow::saveFile()
         file.close();
     } else {
         QMessageBox::warning(this, tr("Path"), tr("You did not select any file."));
+    }
+}
+
+void MainWindow::closeEvent(QCloseEvent *event)
+{
+    if (isWindowModified()) {
+        bool exit = QMessageBox::question(this,
+                                      tr("Quit"),
+                                      tr("Are you sure to quit this application?"),
+                                      QMessageBox::Yes | QMessageBox::No,
+                                      QMessageBox::No) == QMessageBox::Yes;
+        if (exit) {
+            event->accept();
+        } else {
+            event->ignore();
+        }
+    } else {
+        event->accept();
     }
 }

@@ -16,6 +16,7 @@ public:
 private slots:
     void openFile();
     void saveFile();
+    void closeEvent(QCloseEvent *event);
     
 private:
     QAction *openAction;
